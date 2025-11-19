@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir First Play - لعبة أمير الأولى</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- شاشة البداية -->
+        <div id="startScreen" class="screen active">
+            <h1>🎯 Amir First Play</h1>
+            <p>لعبة بسيطة وممتعة - تحكم في اللاعب واضرب الأهداف المتحركة لتسجيل النقاط!</p>
+            
+            <!-- أزرار التحكم -->
+            <div class="controls">
+                <button id="playBrowserBtn" class="btn primary">🎮 العب في المتصفح</button>
+                <button id="downloadAndroidBtn" class="btn secondary android-only">📱 تحميل للأندرويد</button>
+                <div id="deviceInfo" class="device-info"></div>
+            </div>
+            
+            <!-- معلومات اللعبة -->
+            <div class="game-info">
+                <h3>كيفية اللعب:</h3>
+                <ul>
+                    <li>استخدم الأسهم أو اسحب بإصبعك للتحرك</li>
+                    <li>اضرب الأهداف الحمراء لتسجيل النقاط</li>
+                    <li>تجنب الأهداف الزرقاء</li>
+                    <li>احصل على أعلى نقاط ممكنة!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- شاشة اللعبة -->
+        <div id="gameScreen" class="screen">
+            <div id="gameUI">
+                <div id="score">النقاط: <span id="scoreValue">0</span></div>
+                <div id="lives">الأرواح: <span id="livesValue">3</span></div>
+                <button id="pauseBtn" class="btn small">⏸️ إيقاف</button>
+            </div>
+            
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <!-- أزرار التحكم للموبايل -->
+            <div id="mobileControls" class="mobile-controls">
+                <button id="leftBtn" class="control-btn">⬅️</button>
+                <button id="rightBtn" class="control-btn">➡️</button>
+                <button id="upBtn" class="control-btn">⬆️</button>
+                <button id="downBtn" class="control-btn">⬇️</button>
+                <button id="shootBtn" class="control-btn shoot">🎯</button>
+            </div>
+        </div>
+
+        <!-- شاشة انتهاء اللعبة -->
+        <div id="gameOverScreen" class="screen">
+            <h2>انتهت اللعبة!</h2>
+            <p>نقاطك النهائية: <span id="finalScore">0</span></p>
+            <p id="highScoreText"></p>
+            <button id="restartBtn" class="btn primary">🔄 العب مرة أخرى</button>
+            <button id="backToMenuBtn" class="btn secondary">🏠 العودة للقائمة</button>
+        </div>
+
+        <!-- شاشة الإيقاف -->
+        <div id="pauseScreen" class="screen">
+            <h2>تم إيقاف اللعبة</h2>
+            <button id="resumeBtn" class="btn primary">▶️ متابعة</button>
+            <button id="quitBtn" class="btn secondary">🚪 خروج</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
